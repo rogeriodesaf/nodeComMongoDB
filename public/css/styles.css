@@ -25,7 +25,10 @@
 
 .navbar ul li{
     margin-left: 2em;
+    
 }
+
+
 
 .navbar ul li a{
     text-decoration: none;
@@ -96,6 +99,7 @@ form input[type='submit'],
 .product img{
     max-width: 100%;
     margin-bottom: 0.5em;
+    border-radius: 5px;
 
 }
 
@@ -103,4 +107,21 @@ form input[type='submit'],
     margin-bottom: 1em;
 }
 
+.product-page img{
+    max-width: 400px;
+    margin-bottom: 1em;
+}
 
+
+.product-page p
+{
+     margin-bottom: 1em;
+}
+
+.product-page a{
+    color:yellowgreen;
+}
+
+.product-page a:hover{
+    color:rgb(205, 50, 159);
+}

@@ -1,4 +1,11 @@
-<h1>Dados do Produto</h1>
-<h3>{{product.name}}</h3>
-<img src="{{product.image}}" alt="{{product.name}}">
-<a href="/products/">voltar</a>
+<div class="product-page">
+    <h1>Dados do Produto</h1>
+    <a href="/products/">voltar</a>
+    <p>{{product.name}}</p>
+    <p>R$ {{product.price}}</p>
+    <img src="{{product.image}}" alt="{{product.name}}">
+    <form action="/products/remove/{{product._id}}" method="POST">
+        <input type="submit" value="Excluir">
+    </form>
+
+</div>
