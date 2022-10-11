@@ -46,4 +46,12 @@ module.exports = class ProductController {
         console.log('removeu')
         res.redirect('/products/')
     }
+    static async editGetProducts(req,res){
+        const id = req.params.id
+
+        const products = await Product.editGetProducts(id)
+
+        res.render('products/edit', {products})
+    }
+    
 }

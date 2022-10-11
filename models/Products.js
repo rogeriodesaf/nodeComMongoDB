@@ -37,6 +37,11 @@ class Product {
         return
     }
 
+    static async editGetProducts(id){
+        const product = await conn.db().collection('products').findOne({_id:ObjectId(id)})
+        return product
+    }
+
 }
 
 module.exports = Product
