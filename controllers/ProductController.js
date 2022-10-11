@@ -1,4 +1,4 @@
-const { getProducts } = require('../models/Products')
+
 const Product = require('../models/Products')
 
 
@@ -43,15 +43,30 @@ module.exports = class ProductController {
         const id = req.params.id
 
         await Product.removeProductById(id)
-        console.log('removeu')
+       
         res.redirect('/products/')
     }
-    static async editGetProducts(req,res){
+    static async editGetProducts(req, res) {
         const id = req.params.id
 
-        const products = await Product.editGetProducts(id)
+        const products = await Product.getProductById(id)
 
-        res.render('products/edit', {products})
+        res.render('products/edit', { products })
     }
-    
+    static async editPostProducts(req, res) {
+        const id = req.body._id
+        const name = req.body.name
+        const image = req.body.image
+        const price = req.body.price
+        const description = req.body.description
+
+        const products = new Product(name, image, price, description)
+
+        await products.updateProductById(id)
+
+
+        res.redirect('/products')
+
+    }
+
 }
